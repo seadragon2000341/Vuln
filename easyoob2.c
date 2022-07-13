@@ -62,7 +62,7 @@ void handle_read(entry* leaderboard, command cmd)
 
 void handle_write(entry* leaderboard, command cmd)
 {
-    memcpy(leaderboard[cmd.pos].name, cmd.name, 4);
+    memcpy(leaderboard[cmd.pos].name, cmd.name);
     leaderboard[cmd.pos].score = cmd.score;
     printf("%d. %-4s  %d\n", cmd.pos, leaderboard[cmd.pos].name, leaderboard[cmd.pos].score);
 }
